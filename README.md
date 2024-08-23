@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# Auth System
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is a robust authentication system built using Next.js, Tailwind CSS, and MongoDB as database. It includes features such as OAuth integration, secure login and signup, password recovery, and route protection.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **User Registration:** Allows new users to sign up.
+- **User Login:** Secure login with password handling.
+- **OAuth Integration:** Supports login via third-party providers (e.g., Google, Facebook).
+- **Password Recovery:** Enables users to reset forgotten passwords.
+- **Protected Routes:** Restricts access to certain routes based on user authentication status.
+- **Session Management:** Handles user sessions securely.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Demo
 
-## Learn More
+You can view the live demo of the application here: [Auth System Demo](https://auth-system-sage.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend:**
+  - Next.js (React Framework)
+  - Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Backend:**
+  - Node.js
+  - Express.js
+  - MongoDB
 
-## Deploy on Vercel
+- **Authentication:**
+  - OAuth (for third-party logins)
+  - JWT (JSON Web Tokens)
+  - bcrypt.js (for hashing passwords)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Hosting:**
+  - Vercel (for serverless deployment)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/aliyansajid/auth-system.git
+   cd auth-system
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables:**
+
+   Create a `.env` file in the root directory and add the following environment variables:
+
+   ```bash
+   MONGO_URI=<your-mongodb-uri>
+   JWT_SECRET=<your-jwt-secret>
+   OAUTH_CLIENT_ID=<your-oauth-client-id>
+   OAUTH_CLIENT_SECRET=<your-oauth-client-secret>
+   EMAIL_USERNAME=<your-email-account>
+   EMAIL_PASSWORD=<your-app-password>
+   NEXTAUTH_SECRET=<your-auth-secret>
+   NEXTAUTH_URL=<your-next-auth-url>
+   ```
+
+4. **Run the application:**
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:3000`.
+
+## Usage
+
+- **Register:** Go to `/register` to create a new account.
+- **Login:** Go to `/` to log into your account.
+- **Password Recovery:** Go to `/forgot-password` to reset your password.
+- **Protected Routes:** Access restricted pages (e.g., `/dashboard`) only when logged in.
+- **OAuth Login:** Use OAuth provider (Google) for authentication.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [Vercel](https://vercel.com/) for hosting
+- [MongoDB](https://www.mongodb.com/) for the database
+- [OAuth](https://oauth.net/) for third-party authentication
